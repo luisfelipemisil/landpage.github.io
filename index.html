@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EcoTravel - Explore the World Sustainably</title>
+    <title>RecipeMaster - Your Ultimate Recipe App</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background: #f5f5f5;
         }
 
         header {
-            background: #4CAF50;
+            background: #ff6347;
             color: white;
             padding: 1em 0;
         }
@@ -33,30 +34,51 @@
         }
 
         .hero {
-            background: url('images/hero-background.jpg') no-repeat center center/cover;
+            background: url('images/hero-recipe.jpg') no-repeat center center/cover;
             color: white;
             text-align: center;
             padding: 100px 0;
         }
 
         .hero .cta-button {
-            background: #FF5722;
+            background: #ffa07a;
             color: white;
             padding: 10px 20px;
             text-decoration: none;
+            border-radius: 5px;
         }
 
-        .about, .services, .destinations, .contact {
+        .about, .features, .testimonials, .download, .contact {
             padding: 50px 0;
+            background: white;
+            margin-bottom: 20px;
+            border-radius: 10px;
         }
 
-        .service-item, .destination-item {
+        .section-title {
+            text-align: center;
             margin-bottom: 20px;
+            color: #ff6347;
+        }
+
+        .about p, .features p, .testimonials p, .download p {
+            text-align: center;
+            color: #333;
+        }
+
+        .features, .testimonials, .download {
+            background: #fffaf0;
+        }
+
+        .feature-item, .testimonial-item {
+            margin-bottom: 20px;
+            text-align: center;
         }
 
         .contact form {
             display: flex;
             flex-direction: column;
+            align-items: center;
         }
 
         .contact label {
@@ -66,14 +88,17 @@
         .contact input, .contact textarea {
             margin-bottom: 10px;
             padding: 10px;
+            width: 80%;
+            max-width: 400px;
         }
 
         .contact .submit-button {
-            background: #4CAF50;
+            background: #ff6347;
             color: white;
             padding: 10px;
             border: none;
             cursor: pointer;
+            border-radius: 5px;
         }
 
         footer {
@@ -98,11 +123,12 @@
     <header>
         <div class="container">
             <nav>
-                <h1 class="logo">EcoTravel</h1>
+                <h1 class="logo">RecipeMaster</h1>
                 <ul>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#destinations">Destinations</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#download">Download</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -111,61 +137,66 @@
 
     <section class="hero">
         <div class="container">
-            <h2>Explore the World Sustainably</h2>
-            <p>Discover eco-friendly travel packages that leave a positive impact on the environment.</p>
-            <a href="#services" class="cta-button">Learn More</a>
+            <h2>Discover Delicious Recipes Anytime, Anywhere</h2>
+            <p>RecipeMaster brings thousands of recipes to your fingertips. Cook like a pro!</p>
+            <a href="#download" class="cta-button">Get the App</a>
         </div>
     </section>
 
     <section id="about" class="about">
         <div class="container">
-            <h2>About Us</h2>
-            <p>EcoTravel is dedicated to promoting sustainable tourism by offering eco-friendly travel packages that minimize the impact on the environment and support local communities.</p>
+            <h2 class="section-title">About RecipeMaster</h2>
+            <p>RecipeMaster is your ultimate cooking companion, providing easy access to a vast collection of recipes from around the world. Whether you're a beginner or a seasoned chef, our app helps you create delicious meals with step-by-step instructions.</p>
         </div>
     </section>
 
-    <section id="services" class="services">
+    <section id="features" class="features">
         <div class="container">
-            <h2>Our Services</h2>
-            <div class="service-item">
-                <h3>Eco-Friendly Accommodations</h3>
-                <p>Stay at green hotels and lodges that follow sustainable practices.</p>
+            <h2 class="section-title">Features</h2>
+            <div class="feature-item">
+                <h3>Vast Recipe Collection</h3>
+                <p>Explore thousands of recipes from various cuisines, all in one place.</p>
             </div>
-            <div class="service-item">
-                <h3>Carbon Offset Travel</h3>
-                <p>We offset the carbon emissions of your travels by investing in renewable energy projects.</p>
+            <div class="feature-item">
+                <h3>Step-by-Step Instructions</h3>
+                <p>Follow easy, detailed instructions to cook your favorite dishes perfectly.</p>
             </div>
-            <div class="service-item">
-                <h3>Community Support</h3>
-                <p>Engage with and support local communities through responsible tourism activities.</p>
+            <div class="feature-item">
+                <h3>Personalized Recommendations</h3>
+                <p>Get recipe suggestions based on your preferences and cooking history.</p>
             </div>
         </div>
     </section>
 
-    <section id="destinations" class="destinations">
+    <section id="testimonials" class="testimonials">
         <div class="container">
-            <h2>Top Destinations</h2>
-            <div class="destination-item">
-                <img src="images/destination1.jpg" alt="Destination 1">
-                <h3>Destination 1</h3>
-                <p>Experience the beauty and culture of this eco-friendly destination.</p>
+            <h2 class="section-title">What Our Users Say</h2>
+            <div class="testimonial-item">
+                <p>"RecipeMaster has completely transformed the way I cook. The recipes are easy to follow and absolutely delicious!" - Sarah L.</p>
             </div>
-            <div class="destination-item">
-                <img src="images/destination2.jpg" alt="Destination 2">
-                <h3>Destination 2</h3>
-                <p>Explore stunning landscapes and sustainable tourism practices.</p>
+            <div class="testimonial-item">
+                <p>"I love the variety of recipes available. There's always something new to try!" - Michael B.</p>
             </div>
-            <div class="destination-item">
-                <img src="images/destination3.jpg" alt="Destination 3">
-                <h3>Destination 3</h3>
-                <p>Discover a perfect blend of adventure and eco-conscious travel.</p>
+            <div class="testimonial-item">
+                <p>"The app's recommendations are spot on. It's like having a personal chef!" - Emily R.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="download" class="download">
+        <div class="container">
+            <h2 class="section-title">Download RecipeMaster</h2>
+            <p>Available on iOS and Android. Download now and start cooking!</p>
+            <div class="download-links" style="text-align: center;">
+                <a href="#"><img src="images/appstore.png" alt="App Store" style="margin-right: 10px;"></a>
+                <a href="#"><img src="images/googleplay.png" alt="Google Play"></a>
             </div>
         </div>
     </section>
 
     <section id="contact" class="contact">
         <div class="container">
-            <h2>Contact Us</h2>
+            <h2 class="section-title">Contact Us</h2>
             <form action="submit_form.php" method="post">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" required>
@@ -180,7 +211,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 EcoTravel. All rights reserved.</p>
+            <p>&copy; 2024 RecipeMaster. All rights reserved.</p>
             <ul class="social-links">
                 <li><a href="#"><img src="images/facebook-icon.png" alt="Facebook"></a></li>
                 <li><a href="#"><img src="images/twitter-icon.png" alt="Twitter"></a></li>
