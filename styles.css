@@ -16,7 +16,6 @@ header {
 
 .left-section-header {
     flex: 1; /* Ajusta o tamanho da seção esquerda */
-    margin-left: 70px;
 }
 
 .right-section-header {
@@ -147,13 +146,6 @@ font-size: 1rem; /* Ajuste no tamanho dos ícones */
     }
 }
 
-.about-section {
-    display: flex; /* Flexbox para dividir em duas partes horizontais */
-    justify-content: space-between;
-    align-items: center;
-    padding: 40px 20px;
-    background-color: #ceef32;
-}
 
 /* Estilo para a parte da esquerda (imagens dos celulares) */
 .left-section {
@@ -171,26 +163,13 @@ font-size: 1rem; /* Ajuste no tamanho dos ícones */
 .cell-phone-images img {
 
     width: 100%; /* Faz as imagens preencherem o espaço disponível */
-    max-width: 400px; /* Define um tamanho máximo para as imagens */
-    object-fit: cover; /* Ajusta as imagens sem distorção */
-    border-radius: 10px; /* Bordas arredondadas para as imagens */
+
+    width: 100%;
+    overflow: hidden;
+    position: relative;
 }
 
-/* Estilo para a parte da direita (texto About) */
-.right-section {
-    width: 48%; /* Ajusta o tamanho da parte direita */
-    text-align: left;
-}
-
-.right-section h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-.right-section p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-}
+/* Estilo para a parte da direita (texto About) *
 
 /* Responsividade para telas menores */
 @media (max-width: 768px) {
@@ -336,7 +315,7 @@ transform: scale(1.1); /* Aumenta a imagem ao passar o mouse */
     background-color: #f9f9f9;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin-right: 20px;
+    margin-right: 10px;
 }
 
 .generate-button {
@@ -389,4 +368,42 @@ transform: scale(1.1); /* Aumenta a imagem ao passar o mouse */
 .youtube-icon:hover {
     transform: scale(1.3);
     color: #ff0000;
+}
+
+.about-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #ceef32;
+}
+
+.left-section {
+    flex: 1;
+    max-width: 45%; /* Limita a largura das imagens */
+}
+
+.right-section {
+    flex: 1;
+    max-width: 50%; /* Limita a largura do texto */
+    padding-left: 20px;
+}
+
+.right-section p {
+    word-wrap: break-word;
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 768px) {
+    .about-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-section,
+    .right-section {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
 }
