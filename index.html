@@ -3,350 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech App - Landing Page</title>
-    <style>
-
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f7f7f7;
-            color: #333;
-        }
-
-        header {
-            display: flex; /* Define layout flexível */
-            justify-content: space-between; /* Espaça as seções uniformemente */
-            align-items: center; /* Alinha itens verticalmente */
-            padding: 20px;
-            background-color: #fffbf3; /* Cor de fundo opcional */
-        }
-
-        .left-section-header {
-            flex: 1; /* Ajusta o tamanho da seção esquerda */
-            margin-left: 70px;
-        }
-
-        .right-section-header {
-            flex: 1; /* Ajusta o tamanho da seção direita */
-            text-align: right; /* Alinha o conteúdo à direita */
-        }
-
-        .section {
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-    font-size: 1rem;
-}
-
-footer a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
-    transition: color 0.3s ease;
-}
-
-footer a:hover {
-    color: #ce4f02; /* Altere para a cor desejada ao passar o mouse */
-}
-
-/* Ícones ao lado do texto */
-footer i {
-    margin-right: 8px;
-    font-size: 1.2rem;
-}
-
-/* Responsividade para telas menores */
-@media (max-width: 768px) {
-    footer {
-        font-size: 0.9rem;
-    }
-    
-    footer i {
-        font-size: 1rem; /* Ajuste no tamanho dos ícones */
-    }
-}
-
-
-        .big-title {
-            font-size: 3rem; /* Ajuste o tamanho desejado */
-            font-weight: bold; /* Torna o título mais forte */
-            text-align: left; /* Centraliza o texto, se necessário */
-        }
-
-        .image-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); /* Define 3 colunas iguais */
-            gap: 20px; /* Espaçamento entre as imagens */
-        }
-
-        .image-grid img {
-            width: 100%; /* Faz a imagem preencher o espaço do grid */
-            aspect-ratio: 1 / 1; /* Garante que as imagens fiquem quadradas */
-            object-fit: cover; /* Garante que a imagem se ajuste sem distorção */
-            border-radius: 15px; /* Bordas arredondadas */
-            position: relative;
-            top: 0;
-            transition: all 0.3s ease-in-out; /* Para animações suaves */
-        }
-
-        /* Desalinhamento aleatório */
-        .image-grid img:nth-child(2) {
-            margin-top: 0px;
-        }
-        .image-grid img:nth-child(4) {
-            margin-top: 0px;
-        }
-        .image-grid img:nth-child(6) {
-            margin-top: 0px;
-        }
-
-        /* Efeito de hover */
-        .image-grid img:hover {
-            transform: scale(1.1); /* Aumenta a imagem levemente ao passar o mouse */
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Adiciona sombra */
-        }
-
-        /* Estilos para telas pequenas */
-        /* Responsividade para telas pequenas */
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column; /* Alinha os elementos em cima e embaixo */
-                text-align: center;
-            }
-
-            .left-section-header {
-                align-items: center; /* Alinha todos os itens no centro */
-                margin-bottom: 20px; /* Espaçamento entre a seção */
-                text-align: center;
-            }
-
-            .left-section-header h1 {
-                font-size: 2rem; /* Ajusta o tamanho da fonte para telas menores */
-            }
-
-            .left-section-header img {
-                max-width: 80%; /* Ajusta o tamanho da imagem */
-                height: auto;
-            }
-
-            .right-section-header {
-                width: 100%; /* Faz a seção ocupar toda a largura */
-            }
-
-            .image-grid {
-                grid-template-columns: repeat(2, 1fr); /* 2 colunas para imagens em telas menores */
-                gap: 15px;
-            }
-            .image-grid img:nth-child(n+3) {
-                display: none; /* Oculta todas as imagens a partir da terceira */
-            }
-        }
-
-        @media (max-width: 480px) {
-            .image-grid {
-                grid-template-columns: 1fr; /* Apenas 1 coluna em telas bem pequenas */
-            }
-        }
-
-        .about-section {
-            display: flex; /* Flexbox para dividir em duas partes horizontais */
-            justify-content: space-between;
-            align-items: center;
-            padding: 40px 20px;
-            background-color: #ceef32;
-        }
-
-        /* Estilo para a parte da esquerda (imagens dos celulares) */
-        .left-section {
-            display: flex;
-            margin-left: 20px;
-            justify-content: space-between;
-            width: 48%; /* Ajusta o tamanho da parte esquerda */
-        }
-
-        .cell-phone-images {
-            display: flex;
-            gap: 10px; /* Espaçamento entre as imagens */
-        }
-
-        .cell-phone-images img {
-
-            width: 100%; /* Faz as imagens preencherem o espaço disponível */
-            max-width: 400px; /* Define um tamanho máximo para as imagens */
-            object-fit: cover; /* Ajusta as imagens sem distorção */
-            border-radius: 10px; /* Bordas arredondadas para as imagens */
-        }
-
-        /* Estilo para a parte da direita (texto About) */
-        .right-section {
-            width: 48%; /* Ajusta o tamanho da parte direita */
-            text-align: left;
-        }
-
-        .right-section h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-
-        .right-section p {
-            font-size: 1.2rem;
-            line-height: 1.6;
-        }
-
-        /* Responsividade para telas menores */
-        @media (max-width: 768px) {
-            .about-section {
-                flex-direction: column; /* Empilha as seções em telas menores */
-                align-items: center;
-            }
-
-            .left-section, .right-section {
-                width: 100%; /* Faz as seções ocuparem toda a largura */
-                margin-bottom: 20px; /* Espaçamento entre as seções */
-            }
-
-            .cell-phone-images {
-                flex-direction: column; /* Empilha as imagens em telas pequenas */
-                align-items: center;
-            }
-        }
-            
-
-            /* Estilos para a seção Features */
-    .features {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        padding: 40px;
-        text-align: center;
-        background-color: #ce4f02;
-        flex-wrap: wrap; /* Permite que as features se movam para a linha seguinte em telas pequenas */
-    }
-
-    .features h2 {
-        width: 100%; /* Faz o título ocupar toda a largura */
-        text-align: center; /* Centraliza o título */
-        margin-bottom: 30px; /* Espaçamento abaixo do título */
-        font-size: 2.5rem; /* Ajuste do tamanho do título */
-        color: #fff;
-    }
-
-    /* Estilo para as features */
-    .feature {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 30%; /* Controla o tamanho das divs dentro do grid */
-        padding: 20px;
-        text-align: center; /* Garante que o texto dentro da feature fique centralizado */
-    }
-
-    .feature-icon {
-        width: 100px; /* Ajusta o tamanho do ícone */
-        height: 100px;
-        margin-bottom: 15px; /* Espaço entre o ícone e o texto */
-    }
-
-    .feature-text {
-        font-size: 1.2rem;
-        line-height: 1.5;
-        color: #fff;
-    }
-
-    /* Responsividade para telas menores */
-    @media (max-width: 768px) {
-        .features {
-            background-color: #ce4f02;
-            flex-direction: column; /* Organiza as features verticalmente */
-            align-items: center;
-        }
-
-        .feature {
-            width: 80%; /* Ajusta o tamanho das divs em telas pequenas */
-            margin-bottom: 20px; /* Espaçamento entre as features */
-        }
-
-        .feature-icon {
-            width: 100px;
-            height: 100px;
-        }
-
-        .features h2 {
-            font-size: 2rem; /* Ajusta o tamanho do título para telas pequenas */
-        }
-    }
-
-    /* Estilos para a seção de Download */
-    .download {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 40px;
-        text-align: center;
-        background-color: #f8f9fa;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        margin-top: 50px;
-    }
-
-    .download h2 {
-        font-size: 2.5rem;
-        margin-bottom: 15px;
-        color: #333;
-    }
-
-    .download p {
-        font-size: 1.2rem;
-        margin-bottom: 20px;
-        color: #555;
-    }
-
-    .googleplay-icon {
-        width: 250px; /* Ajuste o tamanho da imagem */
-        height: auto;
-        transition: transform 0.3s ease; /* Efeito suave ao passar o mouse */
-    }
-
-    .googleplay-icon:hover {
-        transform: scale(1.1); /* Aumenta a imagem ao passar o mouse */
-    }
-
-    /* Responsividade para telas menores */
-    @media (max-width: 768px) {
-        .download h2 {
-            font-size: 2rem; /* Ajuste o tamanho do título em telas pequenas */
-        }
-
-        .download p {
-            font-size: 1rem; /* Ajuste o tamanho do texto em telas pequenas */
-        }
-
-        .googleplay-icon {
-            width: 120px; /* Ajusta o tamanho do ícone em telas pequenas */
-        }
-    }
-
-    </style>
+    <title>Gera Lista - Landing Page</title>
+        <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
 <header>
     <div class="left-section-header">
-        <button style="padding: 20px 10px; background-color: #ce4f02; color: #fff; border: none; border-radius: 25px; font-size: 1.2em;">Gera</button> LISTA    
-        <br>
-        <br>
-        <h1 class="big-title">Listas de compras <br>para sua dieta</h1>
-        <img src="images/celula_deitado.png" alt="Imagem 6">
+        <button class="generate-button">Gera Lista</button>
+        <h1 class="big-title">Listas de compras para sua dieta</h1>
+        <img src="images/celula_deitado.png" alt="Imagem 6" class="header-image">
+        <p class="app-info">App disponível no Google Play</p>
+        <a href="https://play.google.com/store/apps/details?id=com.miranda.geralista" target="_blank">
+            <img src="images/googleplay.png" alt="Google Play" class="googleplay-icon">
+        </a>
     </div>
+    
     <div class="right-section-header">
         <div class="image-grid">
             <img src="images/ovos.png" alt="Imagem 1">
@@ -376,21 +49,42 @@ footer i {
     <h2>Detalhes</h2>
     <div class="feature">
         <img src="images/itens.png" alt="Icon 3" class="feature-icon">
-        <div class="feature-text">Garanta em casa os itens essenciais para vários dias, sem a necessidade de visitas frequentes ao supermercado.</div>
+        <div class="feature-text">
+            Garanta em casa os itens essenciais para vários dias, sem a necessidade de visitas frequentes ao supermercado.
+            <br>
+            <a href="https://youtube.com/shorts/8WVdfpG5oY0" target="_blank" class="youtube-icon">
+                <i class="fab fa-youtube"></i>
+            </a>
+        </div>
     </div>
+    
     <div class="feature">
         <img src="images/lista.png" alt="Icon 1" class="feature-icon">
-        <div class="feature-text">Crie listas de compras personalizadas com ingredientes ajustados para o período que você escolher.</div>
+        <div class="feature-text">
+            Crie listas de compras personalizadas com ingredientes ajustados para o período que você escolher.
+            <br>
+            <a href="https://youtube.com/shorts/3S5x7YKBV_E" target="_blank" class="youtube-icon">
+                <i class="fab fa-youtube"></i>
+            </a>
+        </div>
     </div>
+    
     <div class="feature">
         <img src="images/receitas.png" alt="Icon 2" class="feature-icon">
-        <div class="feature-text">Crie suas próprias receitas, baixe receitas online e salve todos os ingredientes necessários para o preparo.</div>
+        <div class="feature-text">
+            Crie suas próprias receitas, baixe receitas online e salve todos os ingredientes necessários para o preparo.
+            <br>
+            <a href="https://youtube.com/shorts/IwN144DCP1E" target="_blank" class="youtube-icon">
+                <i class="fab fa-youtube"></i>
+            </a>
+        </div>
     </div>
+    
 </section>
 
 <section class="section download">
     <h2>Download the App</h2>
-    <p>App available on Google Play</p>
+    <p>App disponível on Google Play</p>
     <a href="https://play.google.com/store/apps/details?id=com.miranda.geralista" target="_blank">
         <img src="images/googleplay.png" alt="Google Play" class="googleplay-icon">
     </a>
@@ -401,6 +95,7 @@ footer i {
     <p>Follow us on social media: 
         <a href="https://www.instagram.com/geralistas/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
         <a href="https://twitter.com/luisfelipemisil" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+        <a href="https://www.youtube.com/channel/UCGEBp6-etIf6QMfdchJ8pRg" target="_blank"><i class="fab fa-youtube"></i> Youtube</a>
     </p>
     <p>Created by: <a href="https://luisfelipemisil.com" target="_blank"><i class="fas fa-user"></i> Luis Felipe Miranda da Silva</a></p>
     <a href="privacy-policy.html">Privacy Policy</a>
