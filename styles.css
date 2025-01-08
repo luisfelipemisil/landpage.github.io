@@ -225,6 +225,12 @@ height: 100px;
 margin-bottom: 15px; /* Espaço entre o ícone e o texto */
 }
 
+.feature-icon-logo {
+    width: 200px; /* Ajusta o tamanho do ícone */
+    height: 66px;
+    margin-bottom: 15px; /* Espaço entre o ícone e o texto */
+}
+
 .feature-text {
 font-size: 1.2rem;
 line-height: 1.5;
